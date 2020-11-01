@@ -80,7 +80,7 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <p>Filter by deployment method</p>
-            <ul class="row nav nav-tabs">
+            <ul class="row nav nav-tabs" id="deploymentTabs">
                 <li class="nav-item"><a class="nav-link active"
                     data-toggle="tab" href="#platform-all">All</a></li>
                 <li class="nav-item"><a class="nav-link"
@@ -252,6 +252,36 @@
 
         });
       });
+
+
+      <!-- Manage URL anchor location. -->
+
+      let url = location.href.replace(/\/$/, "");
+
+      if (location.hash) {
+        const hash = url.split("#");
+        $('#deploymentTabs a[href="#'+hash[1]+'"]').tab("show");
+        url = location.href.replace(/\/#/, "#");
+        history.replaceState(null, null, url);
+        setTimeout(() => {
+          $(window).scrollTop(0);
+        }, 400);
+      }
+
+      $('a[data-toggle="tab"]').on("click", function() {
+        let newUrl;
+        const hash = $(this).attr("href");
+        if(hash == "#platform-all") {
+          newUrl = url.split("#")[0];
+        } else {
+          newUrl = url.split("#")[0] + hash;
+        }
+        newUrl += "/";
+        history.replaceState(null, null, newUrl);
+      });
     });
   </script>
+
+
+
 </html>

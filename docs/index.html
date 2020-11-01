@@ -6,7 +6,10 @@
     content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="support@senzing.com">
-<title>Senzing Certified</title>
+<title>Senzing Certified Stacks</title>
+
+<!-- Links -->
+
 <link rel="canonical" href="https://certified.senzing.com/">
 <link rel="icon" type="image/png" sizes="32x32"
     href="/images/favicon/favicon-32x32.png">
@@ -43,6 +46,7 @@
 
 </head>
 <body>
+
     <header>
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container d-flex justify-content-between">
@@ -59,7 +63,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a
                 href="https://senzing.com">Senzing</a></li>
-            <li class="breadcrumb-item active" aria-current="page">certified</li>
+            <li class="breadcrumb-item active" aria-current="page">certified
+                stacks</li>
         </ol>
     </nav>
 
@@ -80,83 +85,79 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <p>Filter by deployment method</p>
+
+            <!-- Tabs -->
+
             <ul class="row nav nav-tabs" id="deploymentTabs">
                 <li class="nav-item"><a class="nav-link active"
-                    data-toggle="tab" href="#platform-all">All</a></li>
+                    data-toggle="tab" href="#all">All</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-aws">AWS</a></li>
+                    data-toggle="tab" href="#aws">AWS</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-kubernetes">Kubernetes</a>
+                    data-toggle="tab" href="#kubernetes">Kubernetes</a>
                 </li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-openshift">OpenShift</a>
-                </li>
+                    data-toggle="tab" href="#openshift">OpenShift</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-docker">Docker</a>
-                </li>
+                    data-toggle="tab" href="#docker">Docker</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-linux">Linux</a></li>
+                    data-toggle="tab" href="#linux">Linux</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-mac">Mac</a></li>
+                    data-toggle="tab" href="#macos">MacOS</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-windows">Windows</a>
-                </li>
+                    data-toggle="tab" href="#windows">Windows</a></li>
                 <li class="nav-item"><a class="nav-link"
-                    data-toggle="tab" href="#platform-virtual-machines">Virtual
-                        machines</a></li>
+                    data-toggle="tab" href="#virtual-machines">Virtual
+                        machine</a></li>
             </ul>
 
             <!-- Tab panes -->
 
             <div class="tab-content">
-                <div class="tab-pane container active" id="platform-all">
+                <div class="tab-pane container active" id="all">
                     <div class="container mt-4">
                         <div id="gallery-all" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="platform-aws">
+                <div class="tab-pane container fade" id="aws">
                     <div class="container mt-4">
                         <div id="gallery-aws" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade"
-                    id="platform-kubernetes">
+                <div class="tab-pane container fade" id="kubernetes">
                     <div class="container mt-4">
                         <div id="gallery-kubernetes" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade"
-                    id="platform-openshift">
+                <div class="tab-pane container fade" id="openshift">
                     <div class="container mt-4">
                         <div id="gallery-openshift" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade"
-                    id="platform-docker">
+                <div class="tab-pane container fade" id="docker">
                     <div class="container mt-4">
                         <div id="gallery-docker" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="platform-linux">
+                <div class="tab-pane container fade" id="linux">
                     <div class="container">
                         <div id="gallery-linux" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="platform-mac">
+                <div class="tab-pane container fade" id="macos">
                     <div class="container mt-4">
-                        <div id="gallery-mac" class="row"></div>
+                        <div id="gallery-macos" class="row"></div>
                     </div>
                 </div>
-                <div class="tab-pane container fade"
-                    id="platform-windows">
+                <div class="tab-pane container fade" id="windows">
                     <div class="container mt-4">
                         <div id="gallery-windows" class="row"></div>
                     </div>
                 </div>
                 <div class="tab-pane container fade"
-                    id="platform-virtual-machines">
+                    id="virtual-machines">
                     <div class="container mt-4">
-                        <div id="gallery-virtual-machines" class="row"></div>
+                        <div id="gallery-virtualmachine" class="row"></div>
                     </div>
                 </div>
             </div>
@@ -190,20 +191,21 @@
     <script>
     $(document).ready(function() {
       $.getJSON("data/certified-stacks.json", function(data) {
-
         certified = data.data.certifiedStack
 
-        <!-- FIXME: Use list instead of hard coding. -->
+        <!-- Identify tab panes. -->
 
-        var rowElement = document.getElementById( "gallery-all" )
-        var awsElement = document.getElementById( "gallery-aws" )
-        var kubernetesElement = document.getElementById( "gallery-kubernetes" )
-        var openshiftElement = document.getElementById( "gallery-openshift" )
-        var dockerElement = document.getElementById( "gallery-docker" )
-        var linuxElement = document.getElementById( "gallery-linux" )
-        var macElement = document.getElementById( "gallery-mac" )
-        var windowsElement = document.getElementById( "gallery-windows" )
-        var virtualMachinesElement = document.getElementById( "gallery-virtual-machines")
+        var allElement = document.getElementById( "gallery-all" )
+        var tabPanes = {
+            aws: document.getElementById( "gallery-aws" ),
+            kubernetes: document.getElementById( "gallery-kubernetes" ),
+            openshift: document.getElementById( "gallery-openshift" ),
+            docker: document.getElementById( "gallery-docker" ),
+            linux: document.getElementById( "gallery-linux" ),
+            macos: document.getElementById( "gallery-macos" ),
+            windows: document.getElementById( "gallery-windows" ),
+            virtualmachine: document.getElementById( "gallery-virtualmachine")
+        }
 
         $.each(certified, function(key, value) {
 
@@ -238,21 +240,13 @@
             </div>`
 
           <!-- Append HTML to Gallery -->
-          <!-- FIXME: Use list instead of hard coding. -->
 
-          $(rowElement).append(htmlTemplate);
-          if (platforms.indexOf("AWS") > -1) {$(awsElement).append(htmlTemplate)}
-          if (platforms.indexOf("Kubernetes") > -1) {$(kubernetesElement).append(htmlTemplate)}
-          if (platforms.indexOf("Openshift") > -1) {$(openshiftElement).append(htmlTemplate)}
-          if (platforms.indexOf("Docker") > -1) {$(dockerElement).append(htmlTemplate)}
-          if (platforms.indexOf("Linux") > -1) {$(linuxElement).append(htmlTemplate)}
-          if (platforms.indexOf("Mac") > -1) {$(macElement).append(htmlTemplate)}
-          if (platforms.indexOf("Windows") > -1) {$(windowsElement).append(htmlTemplate)}
-          if (platforms.indexOf("VirtualMachines") > -1) {$(virtualMachinesElement).append(htmlTemplate)}
-
+          $(allElement).append(htmlTemplate);
+          for (const tabPane in tabPanes) {
+            if (platforms.indexOf(tabPane) > -1) {$(tabPanes[tabPane]).append(htmlTemplate)}
+          }
         });
       });
-
 
       <!-- Manage URL anchor location. -->
 
@@ -271,17 +265,14 @@
       $('a[data-toggle="tab"]').on("click", function() {
         let newUrl;
         const hash = $(this).attr("href");
-        if(hash == "#platform-all") {
+        if(hash == "#all") {
           newUrl = url.split("#")[0];
         } else {
           newUrl = url.split("#")[0] + hash;
         }
-        newUrl += "/";
+        // newUrl += "/";
         history.replaceState(null, null, newUrl);
       });
     });
   </script>
-
-
-
 </html>

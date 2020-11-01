@@ -1,23 +1,23 @@
 {
     "data": {
         "certifiedStack": {
-            "X1": {
-                "certifiedCurrent": "1.6.0",
+            "stack-load-from-existing-queue": {
+                "certifiedCurrent": "1.0.0",
                 "certifiedList": [
-                    "1.6.0"
+                    "1.0.0"
                 ],
-                "description": "Complete Senzing stack.",
+                "description": "Reads messages from an existing queue and inserts into Senzing.",
                 "platforms": [
-                    "AWS",
-                    "Docker",
-                    "Windows",
-                    "Mac",
-                    "Linux",
-                    "VirtualMachines"
+                    "aws",
+                    "docker",
+                    "windows",
+                    "macos",
+                    "linux",
+                    "virtualmachine"
                 ],
                 "thumbnail": "https://senzing.github.io/stream-loader/img/thumbnail-320x225.png",
-                "title": "Load only",
-                "updated": "2020-08-29T00:00:00Z",
+                "title": "Load from existing queue",
+                "updated": "2020-11-01T00:00:00Z",
                 "view": "https://senzing.github.io/stream-loader"
             },
             "X2": {
@@ -28,9 +28,9 @@
                 ],
                 "description": "Server of Senzing REST API.",
                 "platforms": [
-                    "Windows",
-                    "Mac",
-                    "Linux"
+                    "windows",
+                    "macos",
+                    "linux"
                 ],
                 "thumbnail": "https://senzing.github.io/senzing-api-server/img/thumbnail-320x225.png",
                 "title": "Desktop App",
@@ -45,10 +45,10 @@
                 ],
                 "description": "A lightweight http server providing a web UI for entity search through the senzing api server.",
                 "platforms": [
-                    "Docker",
-                    "Windows",
-                    "Mac",
-                    "Linux"
+                    "docker",
+                    "windows",
+                    "macos",
+                    "linux"
                 ],
                 "thumbnail": "https://senzing.github.io/entity-search-web-app/img/thumbnail-320x225.png",
                 "title": "Senzing-up",
@@ -62,7 +62,8 @@
                 ],
                 "description": "Senzing REST API server using existing database.",
                 "platforms": [
-                    "VirtualMachines"
+                    "openshift",
+                    "virtualmachine"
                 ],
                 "thumbnail": "https://senzing.github.io/test-ground/img/thumbnail-320x225.png",
                 "title": "Test Ground",
@@ -77,10 +78,10 @@
                 ],
                 "description": "Produce a stream from different input formats.",
                 "platforms": [
-                    "AWS",
-                    "Docker",
-                    "Kubernetes",
-                    "VirtualMachines"
+                    "aws",
+                    "docker",
+                    "kubernetes",
+                    "virtualmachine"
                 ],
                 "thumbnail": "https://senzing.github.io/stream-producer/img/thumbnail-320x225.png",
                 "title": "Stream Producer",
@@ -99,7 +100,7 @@
                 "view": "https://senzing.github.io/redoer"
             }
         },
-        "updated": "2020-10-31T00:00:00Z"
+        "updated": "2020-11-01T00:00:00Z"
     },
     "jsonapi": {
         "version": "1.0"
@@ -110,7 +111,7 @@
     "meta": {
         "httpMethod": "GET",
         "httpStatusCode": 0,
-        "timestamp": "2020-10-31T00:00:00Z",
+        "timestamp": "2020-11-01T00:00:00Z",
         "version": "1.0.0",
         "restApiVersion": "1.0.0"
     }
